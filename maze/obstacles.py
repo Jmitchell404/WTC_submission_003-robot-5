@@ -1,11 +1,9 @@
 import random
 
-
 global list_of_obstacles
 list_of_obstacles = []
 
-
-def get_obstacles():
+def create_random_obstacles():
     """
         function randomly creates list with turlpe that has (x,y) coordinate - positions of obstacels
         :return list_of_obstacles: a list with obstacels in the form (x,y) 
@@ -18,15 +16,15 @@ def get_obstacles():
     return list_of_obstacles
 
 
-def is_position_blocked(x,y):
+def is_position_blocked(x, y):
     """
         function checks if given position is blocked with an obstacle
         :param x: x coordinate
         :param y: y coordinate
-        :return True/False : False if position is not blocked, true if it is
+        :return True/False: False if position is not blocked, true if it is
     """
     global list_of_obstacles
-    
+
     for each in list_of_obstacles:
         if x in range(each[0], each[0]+5) and y in range(each[1], each[1]+5):
             return True
@@ -42,10 +40,9 @@ def check_greater(value1, value2):
         return value2, value1
 
     return value1, value2
+
     
-
-
-def is_path_blocked(x1,y1, x2, y2):
+def is_path_blocked(x1, y1, x2, y2):
     """
         return true if path is blocked
         return false if path is not blocked
@@ -63,10 +60,8 @@ def is_path_blocked(x1,y1, x2, y2):
     return False
 
 
-def show_obst():
+def get_obstacles():
     """
-        returns list of created obst.
+        :returns : random obstacles
     """
-    global list_of_obstacles
-
-    return list_of_obstacles
+    return create_random_obstacles()
